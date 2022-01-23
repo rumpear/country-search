@@ -3,6 +3,8 @@ import { renderCountries } from './js/renderCountries';
 import { checkingForAnEmptyString } from './js/checkingForAnEmptyString';
 import { SearchCountryService } from './js/search-country-service';
 
+import { cleanupRender } from './js/cleanupRender';
+
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
@@ -15,6 +17,11 @@ const searchCountryService = new SearchCountryService();
 
 function onInput(e) {
   searchCountryService.query = e.target.value.trim();
+
+  // if (!searchCountryService.query) {
+  //   cleanupRender();
+  //   return;
+  // }
 
   checkingForAnEmptyString(searchCountryService.query);
 
