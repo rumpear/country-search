@@ -1,0 +1,11 @@
+<div class='country-card__wrapper'> 
+    <img class='country-card__flag' src={{flags.svg}} alt={{name.official}}>    
+    <h1>{{name.official}}</h1>
+</div>   
+<h2> Capital: {{capital}}</h2>
+<p> Population: {{population}}</p>
+<p>Official languages: 
+    {{#each languages}}
+        {{this}}
+    {{/each}}
+</p>
